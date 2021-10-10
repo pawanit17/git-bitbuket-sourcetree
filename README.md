@@ -19,6 +19,8 @@
 - What is HEAD?.
 - Resolve MERGE CONFLICT via command line
 - What is REBASE?.
+- What was this supposed to do - git remote add origin https://github.com/pawanit17/TestRepo.git
+- What does this do - git log --oneline --graph --decorate --color![image]
 
 # Terminology
 | Name      | Meaning |
@@ -27,23 +29,28 @@
 | Staging Area | Also called as Index. Helps in cases where you want to make many changes but proceed with few. This is in the .git/index folder in the working directory |
 | Local Repo | Local repository. This is in the .git folder. This is in .git folder as well |
 | Remote Repo | The repository that is hosted on your organization/cloud |
-| Git PULL | Combination of FETCH and MERGE. Touches both Local Repo and Index |
-| Git FETCH | Touches Local Repo |
-| Git MERGE | Touches Working Directory |
-| Git CHECKOUT | Used for switching between branches |
-| Git PUSH | User for pushing content from local repo to remote repo |
+| PULL | This will update your local branch with the origin/main branch i.e. actually what it does is a combination of Git Fetch and Git merge one after another. But this may Cause Conflicts to occur, so it’s recommended to use Git Pull with a clean copy. Combination of FETCH and MERGE. Touches both Local Repo and Index |
+| FETCH | This will Download all the changes that have been made to the origin/main branch project which are not present in your local branch. Touches Local Repo |
+| MERGE | Touches Working Directory |
+| CHECKOUT | Used for switching between branches |
+| PUSH | User for pushing content from local repo to remote repo |
 
 - ![image](https://user-images.githubusercontent.com/42272776/136691627-e0872ccd-1429-412e-8bc1-a3978389c490.png)
 - ![image](https://user-images.githubusercontent.com/42272776/136691950-e0650b49-abd8-4378-8fb7-1477313854c8.png)
+- All branches are stored in .git/refs
+- All local branches are stored in .git/refs/heads
+- All remote branches are stored in .git/refs/remotes
 
 # Commands
-
 | Name      | Meaning |
 | ----------- | ----------- |
 | git status | List those files which differ between index and working directory |
 | git ls-files | List all those files in the Index |
 | git add <filename> | Adds a file to the Index |
+| git reset HEAD file-name | Unstage the specified file from Git's staging area (aka index). |
 | git commit -m "commit message" | Commit the file to the local repository |
 | git commit -am "commit message" | Adds a file to the Index and commits the file to the local repo |
+| git push -u origin master | Push commit to remote repository |
+| Update | Pull, Fetch, Merge, Rebase |
   
   
